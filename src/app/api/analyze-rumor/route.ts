@@ -2,6 +2,9 @@ import { NextResponse } from 'next/server';
 import OpenAI from 'openai';
 import { RumorReference } from '../../../types';
 
+// Log at startup to verify env var
+console.log('API Key exists:', !!process.env.OPENAI_API_KEY);
+
 if (!process.env.OPENAI_API_KEY) {
   throw new Error('OPENAI_API_KEY environment variable is not set');
 }
@@ -13,6 +16,7 @@ const openai = new OpenAI({
 export async function POST(request: Request) {
   try {
     const { rumor } = await request.json();
+    console.log('Received rumor:', rumor);
 
     if (!rumor) {
       return NextResponse.json(
@@ -21,6 +25,7 @@ export async function POST(request: Request) {
       );
     }
 
+    console.log('Making OpenAI request...');
     // Use OpenAI to analyze the rumor and search for references
     const completion = await openai.chat.completions.create({
       model: "gpt-3.5-turbo", // Using 3.5 initially as it's cheaper
@@ -35,11 +40,13 @@ export async function POST(request: Request) {
         }
       ]
     });
+    console.log('OpenAI response received');
 
     const response = completion.choices[0]?.message?.content;
     if (!response) {
       throw new Error('No response from OpenAI');
     }
+    console.log('Raw OpenAI response:', response);
 
     let parsedResponse;
     try {
@@ -56,7 +63,14 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ references: parsedResponse.references });
   } catch (error: any) {
-    console.error('Error processing rumor:', error);
+    // Log the full error object
+    console.error('Full error object:', {
+      name: error.name,
+      message: error.message,
+      stack: error.stack,
+      cause: error.cause
+    });
+
     return NextResponse.json(
       { 
         error: 'Failed to process rumor',
