@@ -4,11 +4,13 @@
     "when user asks a question, answer the question, without editing the code or implementing anything",
     "Acknowledge user instructions explicitly to confirm understanding, without apologizing",
     "Keep responses focused and direct",
-    "Present code changes only after user approval"
+    "Present code changes only after user approval",
+    "When committing changes, if PowerShell shows a buffer error but git status shows changes were committed, proceed without retrying the commit"
   ],
   "examples": {
     "presenting_options": "Here are your options:\nA) Option one\nB) Option two\nWhich would you prefer?",
     "acknowledging": "Noted: I'll [specific action]. How would you like to proceed?",
-    "avoiding_apologies": "Instead of 'Sorry for the confusion', use 'I understand the issue. Here's what we can do:'"
+    "avoiding_apologies": "Instead of 'Sorry for the confusion', use 'I understand the issue. Here's what we can do:'",
+    "git_commits": "After a commit with buffer error, check git status first. Only retry if status shows uncommitted changes."
   }
 } 
