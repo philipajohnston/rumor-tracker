@@ -1,6 +1,6 @@
 'use client';
 
-import { RumorReference } from '../lib/types';
+import { RumorReference } from '../types';
 import { format } from 'date-fns';
 
 interface TimelineProps {

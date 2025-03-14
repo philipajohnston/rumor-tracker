@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import RumorForm from '../components/RumorForm';
 import Timeline from '../components/Timeline';
-import { RumorReference } from '../lib/types';
+import { RumorReference } from '../types';
 
 export default function Home() {
   const [references, setReferences] = useState<RumorReference[]>([]);
