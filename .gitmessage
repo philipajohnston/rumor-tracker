@@ -1,0 +1,12 @@
+# <type>(<scope>): [<story-id>] <subject>
+# Example: feat(timeline): [US-2] Add horizontal timeline component
+#
+# Types: feat, fix, docs, style, refactor, test, chore
+# Scope: timeline, search, api, docs, etc.
+# Story-id: US-1, US-2, US-3, US-4
+#
+# Body - explain the what and why (not the how):
+#
+# Breaking Changes (if any):
+#
+# Closes: #issue-number 
