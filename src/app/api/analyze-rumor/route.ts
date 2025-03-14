@@ -26,17 +26,18 @@ export async function POST(request: Request) {
     }
 
     console.log('Making OpenAI request...');
-    // Use OpenAI to analyze the rumor and search for references
     const completion = await openai.chat.completions.create({
-      model: "gpt-3.5-turbo", // Using 3.5 initially as it's cheaper
+      model: "gpt-3.5-turbo-0125", // Latest 3.5-turbo model, most cost-effective
+      temperature: 0.3, // Lower temperature for more focused responses
+      max_tokens: 1000, // Limit response length to control costs
       messages: [
         {
           role: "system",
-          content: "You are a fact-checking assistant. Your task is to analyze the given rumor and search for its origins and related references on the internet. Format your response as JSON with an array of references, each containing id, url, title, date, source, excerpt, and relevance score."
+          content: "You are a fact-checking assistant. Analyze the rumor and provide references in JSON format. Be concise. Return exactly this structure: {\"references\": [{\"id\": \"string\", \"url\": \"string\", \"title\": \"string\", \"date\": \"YYYY-MM-DD\", \"source\": \"string\", \"excerpt\": \"string (max 100 chars)\", \"relevance\": number (0-1)}]}"
         },
         {
           role: "user",
-          content: `Please analyze this rumor and find its origins and related references: "${rumor}"`
+          content: `Analyze this rumor: "${rumor}"`
         }
       ]
     });
