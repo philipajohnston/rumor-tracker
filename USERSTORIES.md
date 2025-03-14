@@ -1,5 +1,15 @@
 # User Stories - Rumor Tracker
 
+## Story Status Tracking
+
+| Story ID | Story Name | Status | Last Updated | Related PRs |
+|----------|------------|--------|--------------|-------------|
+| US-1 | Multiple Chronological Results | Planning | 2024-03-14 | - |
+| US-2 | Horizontal Timeline Display | Planning | 2024-03-14 | - |
+| US-3 | Volume-Based Timeline | Planning | 2024-03-14 | - |
+| US-4 | Git Structure and Documentation | Complete | 2024-03-14 | #1 |
+| US-5 | Story Completion Tracking | In Progress | 2024-03-14 | - |
+
 ## Story Categories
 
 ### Search and Results Display
@@ -82,14 +92,4 @@
 **Technical Notes:**
 - Update status in story tracking table
 - Link to completing PR
-- Record completion date
-
-## Story Status Tracking
-
-| Story ID | Status | Last Updated | Related PRs |
-|----------|--------|--------------|-------------|
-| US-1 | Planning | 2024-03-14 | - |
-| US-2 | Planning | 2024-03-14 | - |
-| US-3 | Planning | 2024-03-14 | - |
-| US-4 | Complete | 2024-03-14 | #1 |
-| US-5 | In Progress | 2024-03-14 | - | 
+- Record completion date 
