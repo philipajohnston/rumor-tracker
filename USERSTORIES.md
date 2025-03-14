@@ -68,6 +68,22 @@
 - Include story IDs in commits
 - Keep USERSTORIES.md updated
 
+#### US-5: Story Completion Tracking
+**As a** Project Lead  
+**I want to** have user stories automatically marked as complete when all acceptance criteria are met  
+**So that** I can easily track project progress
+
+**Acceptance Criteria:**
+- Stories are marked complete when all criteria are met
+- Completion status is reflected in USERSTORIES.md
+- Completion date is recorded
+- Related PRs are linked
+
+**Technical Notes:**
+- Update status in story tracking table
+- Link to completing PR
+- Record completion date
+
 ## Story Status Tracking
 
 | Story ID | Status | Last Updated | Related PRs |
@@ -75,4 +91,5 @@
 | US-1 | Planning | 2024-03-14 | - |
 | US-2 | Planning | 2024-03-14 | - |
 | US-3 | Planning | 2024-03-14 | - |
-| US-4 | In Progress | 2024-03-14 | - | 
+| US-4 | Complete | 2024-03-14 | #1 |
+| US-5 | In Progress | 2024-03-14 | - | 
