@@ -53,6 +53,44 @@ yarn dev
 - OpenAI API
 - date-fns
 
+## Future Enhancements
+
+### Web Search Capabilities
+
+The application currently uses GPT-3.5-turbo with a knowledge cutoff date. Two potential options for adding real-time web search capabilities have been identified:
+
+#### Option A: Custom Web Search API Integration
+
+Pros:
+- More control over search results and sources
+- Can be more cost-effective for high volume usage
+- Ability to customize search parameters and filters
+- Can combine multiple search engines/sources
+- No need to upgrade to GPT-4
+
+Cons:
+- More complex implementation (need to handle API integration, rate limits)
+- Additional API costs for search services
+- Need to manage multiple API keys
+- May require more error handling and maintenance
+- Need to carefully format search results for GPT consumption
+
+#### Option B: GPT-4 with Web Browsing
+
+Pros:
+- Simpler implementation (single API integration)
+- More natural integration of search and analysis
+- Better handling of complex queries
+- Built-in content summarization
+- More reliable parsing of web content
+
+Cons:
+- Significantly higher cost per request (GPT-4 vs GPT-3.5)
+- Less control over which sources are used
+- Limited by OpenAI's browsing capabilities
+- May have slower response times
+- Knowledge cutoff still applies to model's base knowledge
+
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
