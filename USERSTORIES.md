@@ -4,7 +4,7 @@
 
 | Story ID | Story Name | Status | Completed | Related PRs |
 |----------|------------|--------|-----------|-------------|
-| US-1 | Multiple Chronological Results | 📝 | - | - |
+| US-1 | Multiple Chronological Results | 🏗️ | - | - |
 | US-2 | Horizontal Timeline Display | 📝 | - | - |
 | US-3 | Volume-Based Timeline | 📝 | - | - |
 | US-4 | Git Structure and Documentation | ✅ | 2024-03-14 | #1 |
@@ -25,15 +25,21 @@ Status Key:
 **So that** I can understand how the rumor has spread across different sources
 
 **Acceptance Criteria:**
+- API collects up to 15 results
+- Display shows exactly 7 results from different domains:
+  - 2 earliest results preserved
+  - 5 results evenly distributed across remaining timeline
 - Results are displayed in chronological order
 - Each result shows source, date, and excerpt
 - Results are grouped by time period
 - User can see the progression of the rumor across sources
 
 **Technical Notes:**
-- Modify OpenAI API to return multiple results
-- Implement result sorting and grouping
-- Consider pagination for large result sets
+- Modify OpenAI API to return multiple results (max 15)
+- Implement result sorting and domain-based filtering
+- Create processResults function for distribution logic
+- Implement result grouping by time period
+- Consider pagination for viewing all 15 results
 
 #### US-2: Horizontal Timeline Display
 **As a** user viewing rumor results  
